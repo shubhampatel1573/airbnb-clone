@@ -50,7 +50,7 @@ const sampleListing = [
   {
     title: "Forest Hut",
     description: "Secluded hut surrounded by dense jungle.",
-    image: "https://images.unsplash.com/photo-1508182311256-e3f7d4a9e86d",
+    image: "https://www.artstation.com/artwork/wvbD9",
     price: 70,
     location: "Meghalaya",
     country: "India"
@@ -74,7 +74,7 @@ const sampleListing = [
   {
     title: "Desert Camp",
     description: "Experience desert life with luxury tents.",
-    image: "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f0",
+    image: "https://unsplash.com/s/photos/desert-camping",
     price: 140,
     location: "Jaisalmer",
     country: "India"
@@ -82,7 +82,7 @@ const sampleListing = [
   {
     title: "Snow Peak Lodge",
     description: "Lodge at high altitude with snow-covered peaks.",
-    image: "https://images.unsplash.com/photo-1519817650390-64a93db511aa",
+    image: "https://unsplash.com/photos/a-snow-covered-ski-lodge-with-mountains-in-the-background-rTQANl0Viqk",
     price: 170,
     location: "Gulmarg",
     country: "India"
@@ -90,7 +90,7 @@ const sampleListing = [
   {
     title: "Cultural Retreat",
     description: "Stay connected to local traditions and culture.",
-    image: "https://images.unsplash.com/photo-1526057565006-28e3c9c2f805",
+    image: "https://unsplash.com/s/photos/yoga-retreat",
     price: 80,
     location: "Varanasi",
     country: "India"
@@ -114,7 +114,7 @@ const sampleListing = [
   {
     title: "Himalayan Home",
     description: "Traditional home in the lap of the Himalayas.",
-    image: "https://images.unsplash.com/photo-1500048993959-d23a436266cf",
+    image: "https://unsplash.com/s/photos/himalay",
     price: 95,
     location: "Kullu",
     country: "India"
