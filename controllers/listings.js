@@ -1,5 +1,4 @@
 const Listing = require("../models/listing");
-const wrapAsync = require("../utils/wrapAsync.js");
 
 module.exports.index = async (req, res) => {
     const allListings = await Listing.find({});
@@ -15,7 +14,7 @@ module.exports.renderNewForm = (req, res) => {
     res.render("listings/new.ejs");
 };
 
-module.exports.showListing  =  wrapAsync(async (req, res) => {
+module.exports.showListing  =  async (req, res) => {
     let { id } = req.params;
     let listing = await Listing.findById(id).populate( {path:"reviews", populate: {path:"author"}}).populate("owner");
     if (!listing) {
@@ -24,9 +23,9 @@ module.exports.showListing  =  wrapAsync(async (req, res) => {
     }
     console.log(listing);
     res.render("listings/show.ejs", { listing });
-});
+};
 
-module.exports.createListing = wrapAsync(async (req, res, next) => {
+module.exports.createListing = async (req, res, next) => {
     // let {titile, description, image, price, country, location} = req.body;
 
     // let listings = req.body.listing;
@@ -48,9 +47,9 @@ module.exports.createListing = wrapAsync(async (req, res, next) => {
     await newListing.save();
     req.flash("success", "New Listing Created!")
     res.redirect("listings");
-});
+};
 
-module.exports.renderEditForm = wrapAsync(async (req, res) => {
+module.exports.renderEditForm = async (req, res) => {
     let { id } = req.params;
     let listing = await Listing.findById(id);
     if (!listing) {
@@ -58,9 +57,9 @@ module.exports.renderEditForm = wrapAsync(async (req, res) => {
         return res.redirect("/listings");
     }
     res.render("listings/edit.ejs", { listing });
-});
+};
 
-module.exports.updateListing = wrapAsync(async (req, res) => {
+module.exports.updateListing = async (req, res) => {
 
     // if (!req.body.listing) {
     //     throw new ExpressError(400, "Send Valid data for listing")
@@ -75,12 +74,12 @@ module.exports.updateListing = wrapAsync(async (req, res) => {
     await Listing.findByIdAndUpdate(id, { ...req.body.listing });
     req.flash("success", "Listing Updated!")
     res.redirect(`/listings/${id}`)
-});
+};
 
-module.exports.destroyListing = wrapAsync(async (req, res) => {
+module.exports.destroyListing = async (req, res) => {
     let { id } = req.params;
     let deletedListing = await Listing.findByIdAndDelete(id);
     console.log(deletedListing);
     req.flash("success", "Listing Deleted!")
     res.redirect("/listings");
-});
+};
